@@ -1,5 +1,5 @@
 # pcl_custom_functions
-Some custom implementations of the Point Cloud Library fucntions that run faster. 
+Some custom implementations of the Point Cloud Library functions that run faster. 
 
 Tested with PCL-1.10 under Ubuntu 20.
 ```
