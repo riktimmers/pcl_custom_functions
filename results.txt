@@ -1,0 +1,27 @@
+Jetson Nano 1 run:
+(via docker running pcl-1.10)
+
+Passthrough: 25.765 milliseconds
+Segmentation: 43.236 milliseconds
+Clustering: 1723.8 milliseconds
+Pcl total: 1800.63 milliseconds
+Clusters: 1
+Custom passthrough: 5.643 milliseconds
+Custom segmentation: 36.633 milliseconds
+Custom clustering: 15.099 milliseconds
+Pcl custom total: 67.439 milliseconds
+Clusters: 1
+
+
+
+PC 1 run:
+Passthrough: 6.889 milliseconds
+Segmentation: 10.891 milliseconds
+Clustering: 552.858 milliseconds
+Pcl total: 574.487 milliseconds
+Clusters: 1
+Custom passthrough: 1.79 milliseconds
+Custom segmentation: 4.201 milliseconds
+Custom clustering: 3.999 milliseconds
+Pcl custom total: 13.026 milliseconds
+Clusters: 1
