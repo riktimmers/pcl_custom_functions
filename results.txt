@@ -25,3 +25,15 @@ Custom segmentation: 4.201 milliseconds
 Custom clustering: 3.999 milliseconds
 Pcl custom total: 13.026 milliseconds
 Clusters: 1
+
+Laptop 1 run:
+Passthrough: 13.532 milliseconds
+Segmentation: 10.579 milliseconds
+Clustering: 508.383 milliseconds
+Pcl total: 536.666 milliseconds
+Clusters: 1
+Custom passthrough: 2.168 milliseconds
+Custom segmentation: 3.733 milliseconds
+Custom clustering: 3.92 milliseconds
+Pcl custom total: 13.294 milliseconds
+Clusters: 1
