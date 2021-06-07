@@ -1,9 +1,7 @@
 #include "pcl_custom_test/pcl_custom_test.h"
 
 PCLCustomTest::PCLCustomTest() {
-
 }
-
 
 void PCLCustomTest::passthrough_filter(PointCloud::Ptr &input_point_cloud, PointCloud::Ptr &output_point_cloud, const Filter &filter) {
   passthrough_.setInputCloud(input_point_cloud);
@@ -14,10 +12,9 @@ void PCLCustomTest::passthrough_filter(PointCloud::Ptr &input_point_cloud, Point
 }
 
 void PCLCustomTest::segment(const PointCloud::Ptr &input_point_cloud, PointCloud::Ptr &output_point_cloud, const Filter &filter) { 
-  segmentation_.setInputCloud(input_point_cloud);
   segmentation_.setMaxIterations(100);
   segmentation_.setSurfaceThreshold(filter.surface_threshold);
-  segmentation_.segment(output_point_cloud);
+  segmentation_.segment(input_point_cloud, output_point_cloud);
 }
 
 void PCLCustomTest::get_clusters(const PointCloud::Ptr &input_point_cloud, std::vector<PointCloud::Ptr> &clusters, const Filter &filter) {
@@ -29,6 +26,3 @@ void PCLCustomTest::get_clusters(const PointCloud::Ptr &input_point_cloud, std::
   clustering_.setClusteringThreshold(filter.cluster_threshold);
   clustering_.extract(input_point_cloud, clusters);
 }
-
-
-
