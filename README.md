@@ -18,7 +18,7 @@ To run the main program:
 ```
 $ ./main
 ```
-To run the programing with timings:
+To run the program with timings:
 ```
 $ ./timing_main
 ```
