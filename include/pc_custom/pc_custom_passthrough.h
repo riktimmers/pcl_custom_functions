@@ -1,10 +1,10 @@
-#ifndef _H_PCL_CUSTOM_PASSTHROUGH__
-#define _H_PCL_CUSTOM_PASSTHROUGH__
+#ifndef _H_PC_CUSTOM_PASSTHROUGH__
+#define _H_PC_CUSTOM_PASSTHROUGH__
 
 #include <pcl/point_cloud.h>
 
 template <typename PointT>
-class PCLCustomPassthrough {
+class PCCustomPassthrough {
   bool filter_x_;
   bool filter_y_;
   bool filter_z_;
@@ -15,7 +15,7 @@ class PCLCustomPassthrough {
   pcl::PointCloud<PointT>::Ptr input_point_cloud_;
 
 public:
-  PCLCustomPassthrough() {
+  PCCustomPassthrough() {
   }
 
   void setInputCloud(pcl::PointCloud<PointT>::Ptr &input_point_cloud) {

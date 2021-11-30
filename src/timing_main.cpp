@@ -4,7 +4,7 @@
 #include <pcl/visualization/pcl_visualizer.h>
 
 #include "pcl_test/pcl_test.h"
-#include "pcl_custom_test/pcl_custom_test.h"
+#include "pc_custom_test/pc_custom_test.h"
 #include "filter/filter.h"
 #include "custom_timer/custom_timer.h"
 
@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
   PCLTest pcl_test;
   PointCloud::Ptr passthrough_point_cloud(new PointCloud());
   {Timer timer("Passthrough", "milliseconds"); 
-  pcl_test.passthrough_filter(pcl_point_cloud, passthrough_point_cloud, filter);
+  pcl_test.passthroughFilter(pcl_point_cloud, passthrough_point_cloud, filter);
   } // timer
 
   PointCloud::Ptr segmented_point_cloud(new PointCloud());
@@ -41,40 +41,39 @@ int main(int argc, char **argv) {
   pcl_test.segment(passthrough_point_cloud, segmented_point_cloud, filter);
   } // timer 
   {Timer timer("Clustering", "milliseconds"); 
-  pcl_test.get_clusters(segmented_point_cloud, pcl_clusters, filter);
+  pcl_test.getClusters(segmented_point_cloud, pcl_clusters, filter);
   } // timer
   } // timer total
 
   std::cout << "Clusters: " << pcl_clusters.size() << "\n";
 
-  std::vector<PointCloud::Ptr> pcl_custom_clusters;
-  {Timer timer("Pcl custom total", "milliseconds"); 
-  PointCloud::Ptr pcl_custom_point_cloud(new PointCloud());
-  *pcl_custom_point_cloud = *point_cloud;
+  std::vector<PointCloud::Ptr> custom_clusters;
+  {Timer timer("Point Cloud functions custom total", "milliseconds"); 
+  PointCloud::Ptr custom_point_cloud(new PointCloud());
+  *custom_point_cloud = *point_cloud;
 
-  PCLCustomTest pcl_custom_test;
+  PCCustomTest custom_test;
   PointCloud::Ptr passthrough_custom_point_cloud(new PointCloud());
   {Timer timer("Custom passthrough", "milliseconds"); 
-  pcl_custom_test.passthrough_filter(pcl_custom_point_cloud, passthrough_custom_point_cloud, filter);
+  custom_test.passthroughFilter(custom_point_cloud, passthrough_custom_point_cloud, filter);
   } // timer 
 
   PointCloud::Ptr segmented_custom_point_cloud(new PointCloud());
   {Timer timer("Custom segmentation", "milliseconds"); 
-  pcl_custom_test.segment(passthrough_custom_point_cloud, segmented_custom_point_cloud, filter);
+  custom_test.segment(passthrough_custom_point_cloud, segmented_custom_point_cloud, filter);
   } // timer
   
   {Timer timer("Custom clustering", "milliseconds"); 
-  pcl_custom_test.get_clusters(segmented_custom_point_cloud, pcl_custom_clusters, filter);
+  custom_test.getClusters(segmented_custom_point_cloud, custom_clusters, filter);
   } // timer
   } // timer total
 
-  std::cout << "Clusters: " << pcl_custom_clusters.size() << "\n";
+  std::cout << "Clusters: " << custom_clusters.size() << "\n";
 
   viewer.addCoordinateSystem();
-  viewer.addPointCloud(pcl_custom_clusters.at(0), "pcl_cloud");
+  viewer.addPointCloud(custom_clusters.at(0), "custom_cluster_cloud");
 
   while (!viewer.wasStopped()) {
     viewer.spinOnce(1000);
   }
-  //*/
 }

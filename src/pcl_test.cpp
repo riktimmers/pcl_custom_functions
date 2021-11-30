@@ -3,7 +3,7 @@
 PCLTest::PCLTest() {
 };
 
-void PCLTest::passthrough_filter(const PointCloud::Ptr &input_point_cloud, PointCloud::Ptr &output_point_cloud, const Filter &filter) {
+void PCLTest::passthroughFilter(const PointCloud::Ptr &input_point_cloud, PointCloud::Ptr &output_point_cloud, const Filter &filter) {
   passthrough_.setInputCloud(input_point_cloud);
   passthrough_.setFilterFieldName("x");
   passthrough_.setFilterLimits(filter.min_x, filter.max_x);
@@ -38,7 +38,7 @@ void PCLTest::segment(const PointCloud::Ptr &input_point_cloud, PointCloud::Ptr 
   extract_.filter(*output_point_cloud);
 }
 
-void PCLTest::get_clusters(const PointCloud::Ptr &input_point_cloud, std::vector<PointCloud::Ptr> &clusters, const Filter &filter) {
+void PCLTest::getClusters(const PointCloud::Ptr &input_point_cloud, std::vector<PointCloud::Ptr> &clusters, const Filter &filter) {
   std::vector<pcl::PointIndices> cluster_indices;
   pcl::search::KdTree<Point>::Ptr kdtree(new pcl::search::KdTree<Point>());
   kdtree->setInputCloud(input_point_cloud);

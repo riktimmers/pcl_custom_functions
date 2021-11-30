@@ -1,13 +1,12 @@
-#ifndef _H_PCL_CUSTOM_CLUSTERING__
-#define _H_PCL_CUSTOM_CLUSTERING__
+#ifndef _H_PC_CUSTOM_CLUSTERING__
+#define _H_PC_CUSTOM_CLUSTERING__
 
 #include <pcl/point_cloud.h>
 #include <pcl/search/kdtree.h>
 #include <unordered_set>
 
 template <typename PointT>
-class PCLCustomClustering {
-
+class PCCustomClustering {
 
   pcl::search::KdTree<PointT>::Ptr kdtree_;
   float clustering_threshold_;
@@ -15,7 +14,7 @@ class PCLCustomClustering {
   size_t max_points_;
 
 public:
-  PCLCustomClustering() : 
+  PCCustomClustering() : 
     clustering_threshold_(0.05f),
     min_points_(0), 
     max_points_(10000) {}

@@ -1,5 +1,5 @@
-#ifndef _H_PCL_CUSTOM_SEGMENTATION__
-#define _H_PCL_CUSTOM_SEGMENTATION__
+#ifndef _H_PC_CUSTOM_SEGMENTATION__
+#define _H_PC_CUSTOM_SEGMENTATION__
 
 #include <pcl/point_cloud.h>
 #include <random>
@@ -15,14 +15,14 @@ struct Coeff { // Struct for containing the coefficients for a plane
 };
 
 template <typename PointT>
-class PCLCustomSegmentation {
+class PCCustomSegmentation {
 
   size_t max_iterations_; // Max iterations to find the plane.
   float surface_threshold_{0.0}; // Surface threshold to determine if a point belongs to a surface, in cm.
   std::default_random_engine generator_; // Generator for random index values.
 
 public:
-  PCLCustomSegmentation() : max_iterations_(100), // Set default 100 iterations.
+  PCCustomSegmentation() : max_iterations_(100), // Set default 100 iterations.
                             generator_(std::chrono::system_clock::now().time_since_epoch().count()) // Set random seed.
                             {
   }

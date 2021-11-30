@@ -15,13 +15,13 @@ include_directories(
 set(source 
   "src/main.cpp"
   "src/pcl_test.cpp"
-  "src/pcl_custom_test.cpp"
+  "src/pc_custom_test.cpp"
 )
 
 set(timing_source
   "src/timing_main.cpp"
   "src/pcl_test.cpp"
-  "src/pcl_custom_test.cpp"
+  "src/pc_custom_test.cpp"
 )
 
 add_executable(main ${source})
