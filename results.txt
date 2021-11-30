@@ -12,9 +12,7 @@ Custom clustering: 15.099 milliseconds
 Pcl custom total: 67.439 milliseconds
 Clusters: 1
 
-
-
-PC 1 run:
+PC (AMD Ryzen 7 3700X) run:
 Passthrough: 6.889 milliseconds
 Segmentation: 10.891 milliseconds
 Clustering: 552.858 milliseconds
@@ -26,7 +24,7 @@ Custom clustering: 3.999 milliseconds
 Pcl custom total: 13.026 milliseconds
 Clusters: 1
 
-Laptop 1 run:
+Laptop (AMD Ryzen 5 4500u) run:
 Passthrough: 13.532 milliseconds
 Segmentation: 10.579 milliseconds
 Clustering: 508.383 milliseconds
