@@ -8,10 +8,7 @@ $ sudo apt install libpcl-dev
 
 To build the code: 
 ```
-$ mkdir -p build/Release
-$ cd build/Release
-$ cmake -DCMAKE_BUILD_TYPE=Release ../../
-$ make -j4
+$ mkdir -p build ; cd build ; cmake -DCMAKE_BUILD_TYPE=Release ../ ; make -j6
 ```
 
 To run the main program: 

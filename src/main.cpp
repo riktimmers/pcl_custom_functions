@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv) {
   PointCloud::Ptr point_cloud(new PointCloud());
-  pcl::io::loadPCDFile("../../data/region_growing_rgb_tutorial.pcd", *point_cloud);
+  pcl::io::loadPCDFile("../data/region_growing_rgb_tutorial.pcd", *point_cloud);
   pcl::visualization::PCLVisualizer viewer("PCL Viewer");
 
   Filter filter;
